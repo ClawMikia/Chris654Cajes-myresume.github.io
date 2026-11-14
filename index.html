@@ -1,336 +1,156 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Christopher Lee Cajes – Senior Software Developer specializing in C#, ASP.NET Core (Web & API), WinForms, and SQL Server.">
     <title>Christopher Lee Cajes | Senior Software Developer</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        :root {
-            --bg-body: #0a0f1b;
-            --sidebar-bg: #111827;
-            --card-bg: #1f2937;
-            --accent: #38bdf8;
-            --accent-rgb: 56, 189, 248;
-            --text-main: #f3f4f6;
-            --text-dim: #9ca3af;
-            --border: #374151;
-        }
-
-        [data-theme="light"] {
-            --bg-body: #f8fafc;
-            --sidebar-bg: #ffffff;
-            --card-bg: #ffffff;
-            --text-main: #1e293b;
-            --text-dim: #64748b;
-            --border: #e2e8f0;
-        }
-
-        * { box-sizing: border-box; }
-
-        body {
-            background-color: var(--bg-body);
-            color: var(--text-main);
-            font-family: 'Inter', -apple-system, sans-serif;
-            font-size: 0.88rem;
-            transition: background-color 0.3s ease, color 0.3s ease;
-            line-height: 1.6;
-        }
-
-        #sidebar {
-            width: 280px;
-            height: 100vh;
-            position: fixed;
-            background: var(--sidebar-bg);
-            border-right: 1px solid var(--border);
-            padding: 1.5rem;
-            overflow-y: auto;
-            z-index: 1000;
-            transition: background 0.3s ease, border-color 0.3s ease;
-        }
-
-        .theme-grid {
-            display: grid;
-            grid-template-columns: repeat(6, 1fr);
-            gap: 7px;
-            margin-bottom: 0.75rem;
-            padding: 10px;
-            background: rgba(0,0,0,0.08);
-            border-radius: 10px;
-        }
-        .theme-dot {
-            width: 26px;
-            height: 26px;
-            border-radius: 50%;
-            cursor: pointer;
-            border: 2px solid transparent;
-            transition: transform 0.18s, box-shadow 0.18s;
-        }
-        .theme-dot:hover { transform: scale(1.2); }
-        .theme-dot.active {
-            box-shadow: 0 0 0 2px var(--bg-body), 0 0 0 4px var(--text-main);
-        }
-
-        .color-picker-row {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            margin-bottom: 1.5rem;
-            padding: 8px 10px;
-            background: rgba(0,0,0,0.08);
-            border-radius: 10px;
-        }
-        .color-picker-label {
-            font-size: 0.76rem;
-            color: var(--text-dim);
-            flex: 1;
-        }
-        #customColorPicker {
-            -webkit-appearance: none;
-            width: 36px;
-            height: 28px;
-            border: 1px solid var(--border);
-            border-radius: 6px;
-            cursor: pointer;
-            padding: 1px 2px;
-            background: transparent;
-        }
-
-        #content {
-            margin-left: 280px;
-            padding: 2rem;
-        }
-
-        .section-box {
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 1.5rem;
-            margin-bottom: 1.5rem;
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
-            transition: background 0.3s ease, border-color 0.3s ease;
-        }
-
-        .section-title {
-            color: var(--accent);
-            text-transform: uppercase;
-            font-size: 0.75rem;
-            font-weight: 800;
-            letter-spacing: 1.2px;
-            margin-bottom: 1.2rem;
-            display: flex;
-            align-items: center;
-            transition: color 0.2s;
-        }
-        .section-title::after {
-            content: "";
-            height: 1px;
-            flex-grow: 1;
-            background: var(--border);
-            margin-left: 1rem;
-        }
-
-        .skill-badge {
-            display: inline-block;
-            background: rgba(var(--accent-rgb), 0.1);
-            color: var(--accent);
-            border: 1px solid rgba(var(--accent-rgb), 0.3);
-            border-radius: 6px;
-            padding: 3px 10px;
-            font-size: 0.78rem;
-            margin: 3px;
-            transition: background 0.2s, color 0.2s, border-color 0.2s;
-        }
-
-        .text-accent { color: var(--accent) !important; transition: color 0.2s; }
-        .text-dim { color: var(--text-dim) !important; transition: color 0.2s; }
-
-        .exp-item {
-            position: relative;
-            padding-left: 1.5rem;
-            border-left: 2px solid var(--border);
-            margin-bottom: 2rem;
-            transition: border-color 0.2s;
-        }
-        .exp-item:last-child { margin-bottom: 0; }
-        .exp-item::before {
-            content: "";
-            position: absolute;
-            left: -7px;
-            top: 4px;
-            width: 12px;
-            height: 12px;
-            background: var(--accent);
-            border-radius: 50%;
-            transition: background 0.2s;
-        }
-
-        .contact-pill {
-            background: rgba(0,0,0,0.05);
-            padding: 8px 12px;
-            border-radius: 8px;
-            display: block;
-            margin-bottom: 8px;
-            text-decoration: none;
-            color: var(--text-dim);
-            font-size: 0.85rem;
-            border: 1px solid var(--border);
-            transition: color 0.2s, border-color 0.2s;
-        }
-        .contact-pill:hover { color: var(--accent); border-color: var(--accent); }
-
-        ul { padding-left: 1rem; }
-        li { margin-bottom: 0.4rem; }
-
-        @media (max-width: 991px) {
-            #sidebar {
-                width: 100%;
-                height: auto;
-                position: relative;
-                border-right: none;
-                border-bottom: 1px solid var(--border);
-            }
-            #content { margin-left: 0; padding: 1.5rem 1rem; }
-            .theme-grid { grid-template-columns: repeat(9, 1fr); }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
+    <script>document.documentElement.classList.add('js');</script>
 </head>
 <body data-theme="dark">
 
-    <aside id="sidebar">
-        <div class="mb-4 text-center">
-            <h5 class="fw-bold mb-1" id="sidebar-name">Christopher Lee Cajes</h5>
-            <p class="small text-accent" id="sidebar-title">Senior Software Developer</p>
-        </div>
+    <div class="intro" aria-hidden="true">
+        <svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="48"/><text x="60" y="62">CC</text></svg>
+    </div>
+    <div class="orbs" aria-hidden="true"><span></span><span></span><span></span></div>
 
-        <span class="section-title">Select Theme</span>
-        <div class="theme-grid" id="themeGrid">
-            <div class="theme-dot active" style="background:#38bdf8;" data-accent="#38bdf8" data-rgb="56,189,248" title="Sky Blue"></div>
-            <div class="theme-dot" style="background:#ef4444;" data-accent="#ef4444" data-rgb="239,68,68" title="Red"></div>
-            <div class="theme-dot" style="background:#f97316;" data-accent="#f97316" data-rgb="249,115,22" title="Orange"></div>
-            <div class="theme-dot" style="background:#eab308;" data-accent="#eab308" data-rgb="234,179,8" title="Amber"></div>
-            <div class="theme-dot" style="background:#22c55e;" data-accent="#22c55e" data-rgb="34,197,94" title="Green"></div>
-            <div class="theme-dot" style="background:#14b8a6;" data-accent="#14b8a6" data-rgb="20,184,166" title="Teal"></div>
-            <div class="theme-dot" style="background:#6366f1;" data-accent="#6366f1" data-rgb="99,102,241" title="Indigo"></div>
-            <div class="theme-dot" style="background:#a855f7;" data-accent="#a855f7" data-rgb="168,85,247" title="Purple"></div>
-            <div class="theme-dot" style="background:#ec4899;" data-accent="#ec4899" data-rgb="236,72,153" title="Pink"></div>
-            <div class="theme-dot" style="background:#f43f5e;" data-accent="#f43f5e" data-rgb="244,63,94" title="Rose"></div>
-            <div class="theme-dot" style="background:#ffffff;border:1px solid #ccc;" data-mode="light" title="Light Mode"></div>
-            <div class="theme-dot" style="background:#0f172a;border:1px solid #334155;" data-mode="dark" title="Dark Mode"></div>
-        </div>
+    <div class="shell">
+        <aside id="sidebar" class="glass">
+            <div class="profile">
+                <div class="avatar"><div id="avatar-initials">CC</div></div>
+                <h1 id="sidebar-name"></h1>
+                <p id="sidebar-title"></p>
+            </div>
 
-        <div class="color-picker-row">
-            <span class="color-picker-label"><i class="fas fa-palette me-1"></i> Custom accent color</span>
-            <input type="color" id="customColorPicker" value="#38bdf8" title="Pick custom accent">
-        </div>
-
-        <span class="section-title">Contact</span>
-        <div class="mb-4" id="sidebar-contact">
-            <a href="#" class="contact-pill" id="contact-email"><i class="fas fa-envelope me-2"></i><span id="contact-email-text">clcajes@gmail.com</span></a>
-            <a href="#" class="contact-pill" id="contact-phone"><i class="fas fa-phone me-2"></i><span id="contact-phone-text">+63 968 581 6796</span></a>
-            <a href="#" target="_blank" class="contact-pill" id="contact-linkedin"><i class="fab fa-linkedin me-2"></i>LinkedIn</a>
-            <div class="small text-dim mt-2 px-2"><i class="fas fa-map-marker-alt me-2"></i><span id="contact-location-text">Philippines</span></div>
-            <div class="small text-accent mt-2 px-2"><i class="fas fa-house-user me-2"></i><span id="contact-wfh-text">Open to Permanent WFH</span></div>
-        </div>
-
-        <span class="section-title">Documents</span>
-        <div class="mb-3">
-            <a id="downloadResumeBtn" href="Resume - Christopher Lee Cajes.pdf" download class="contact-pill text-center fw-bold" style="background:var(--accent);color:#fff;border:none;">
-                <i class="fas fa-file-pdf me-2"></i>Download Resume (PDF)
-            </a>
-        </div>
-        <div class="mb-4">
-            <a id="downloadCoverLetterBtn" href="Cover Letter - Christopher Lee Cajes.pdf" download class="contact-pill text-center fw-bold" style="background:var(--accent);color:#fff;border:none;">
-                <i class="fas fa-file-pdf me-2"></i>Download Cover Letter (PDF)
-            </a>
-        </div>
-    </aside>
-
-    <main id="content">
-        <section id="summary-section" class="section-box">
-            <span class="section-title">Professional Summary</span>
-            <p class="mb-0" id="summary-content">Loading...</p>
-        </section>
-
-        <section id="stack-section" class="section-box">
-            <span class="section-title">Core Technical Skills</span>
-            <div class="row g-3">
-                <div class="col-md-6">
-                    <h6 class="fw-bold small mb-2 text-accent">Primary Stack &amp; Backend</h6>
-                    <div id="skills-primaryStack" class="mb-3"></div>
+            <nav>
+                <div class="side-label">Sections</div>
+                <div class="nav" id="nav">
+                    <a href="#about" class="active"><i class="fas fa-user"></i>About</a>
+                    <a href="#skills"><i class="fas fa-code"></i>Skills</a>
+                    <a href="#experience"><i class="fas fa-briefcase"></i>Experience</a>
+                    <a href="#projects"><i class="fas fa-diagram-project"></i>Projects</a>
+                    <a href="#education"><i class="fas fa-graduation-cap"></i>Education</a>
                 </div>
-                <div class="col-md-6">
-                    <h6 class="fw-bold small mb-2 text-accent">Databases &amp; Infrastructure</h6>
-                    <div id="skills-databases" class="mb-3"></div>
-                </div>
-                <div class="col-md-6">
-                    <h6 class="fw-bold small mb-2 text-accent">Frontend &amp; Mobile</h6>
-                    <div id="skills-frontend" class="mb-3"></div>
-                </div>
-                <div class="col-md-6">
-                    <h6 class="fw-bold small mb-2 text-accent">Multimedia &amp; Creative</h6>
-                    <div id="skills-multimedia" class="mb-3"></div>
+            </nav>
+
+            <div>
+                <div class="side-label">Contact</div>
+                <div class="contact">
+                    <a href="#" id="contact-email"><i class="fas fa-envelope"></i><span id="contact-email-text"></span></a>
+                    <a href="#" id="contact-phone"><i class="fas fa-phone"></i><span id="contact-phone-text"></span></a>
+                    <a href="#" id="contact-linkedin" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i>LinkedIn</a>
+                    <div><i class="fas fa-location-dot"></i><span id="contact-location-text"></span></div>
+                    <div class="wfh"><i class="fas fa-house-user"></i><span id="contact-wfh-text"></span></div>
                 </div>
             </div>
-        </section>
 
-        <section id="experience-section" class="section-box">
-            <span class="section-title">Professional Experience</span>
-            <div id="experience-list"></div>
-        </section>
+            <div>
+                <div class="side-label">Theme</div>
+                <div class="theme-grid" id="themeGrid">
+                    <button class="theme-dot active" style="background:#38bdf8" data-accent="#38bdf8" data-rgb="56,189,248" title="Sky Blue" aria-label="Sky Blue"></button>
+                    <button class="theme-dot" style="background:#ef4444" data-accent="#ef4444" data-rgb="239,68,68" title="Red" aria-label="Red"></button>
+                    <button class="theme-dot" style="background:#f97316" data-accent="#f97316" data-rgb="249,115,22" title="Orange" aria-label="Orange"></button>
+                    <button class="theme-dot" style="background:#eab308" data-accent="#eab308" data-rgb="234,179,8" title="Amber" aria-label="Amber"></button>
+                    <button class="theme-dot" style="background:#22c55e" data-accent="#22c55e" data-rgb="34,197,94" title="Green" aria-label="Green"></button>
+                    <button class="theme-dot" style="background:#14b8a6" data-accent="#14b8a6" data-rgb="20,184,166" title="Teal" aria-label="Teal"></button>
+                    <button class="theme-dot" style="background:#6366f1" data-accent="#6366f1" data-rgb="99,102,241" title="Indigo" aria-label="Indigo"></button>
+                    <button class="theme-dot" style="background:#a855f7" data-accent="#a855f7" data-rgb="168,85,247" title="Purple" aria-label="Purple"></button>
+                    <button class="theme-dot" style="background:#ec4899" data-accent="#ec4899" data-rgb="236,72,153" title="Pink" aria-label="Pink"></button>
+                    <button class="theme-dot" style="background:#f43f5e" data-accent="#f43f5e" data-rgb="244,63,94" title="Rose" aria-label="Rose"></button>
+                    <button class="theme-dot" style="background:#ffffff;border:1px solid #cbd5e1" data-mode="light" title="Light Mode" aria-label="Light mode"></button>
+                    <button class="theme-dot" style="background:#0f172a;border:1px solid #334155" data-mode="dark" title="Dark Mode" aria-label="Dark mode"></button>
+                </div>
+                <div class="picker-row"><span><i class="fas fa-palette"></i>&nbsp; Custom accent</span><input type="color" id="customColorPicker" value="#38bdf8" title="Pick a custom accent color" aria-label="Custom accent color"></div>
+            </div>
 
-        <section id="projects-section" class="section-box">
-            <span class="section-title">Deployed Projects &amp; Portfolio</span>
-            <div class="row g-4" id="projects-list"></div>
-        </section>
+            <div>
+                <div class="side-label">Documents</div>
+                <div class="doc"><span>Resume</span><div>
+                    <a class="chip-btn solid" href="Resume - Christopher Lee Cajes.pdf" download><i class="fas fa-file-pdf"></i> PDF</a>
+                    <a class="chip-btn line" href="Resume - Christopher Lee Cajes.docx" download>DOCX</a></div></div>
+                <div class="doc"><span>Cover letter</span><div>
+                    <a class="chip-btn solid" href="Cover Letter - Christopher Lee Cajes.pdf" download><i class="fas fa-file-pdf"></i> PDF</a>
+                    <a class="chip-btn line" href="Cover Letter - Christopher Lee Cajes.docx" download>DOCX</a></div></div>
+            </div>
+        </aside>
 
-        <div class="row g-4">
-            <div class="col-lg-6">
-                <section id="education-section" class="section-box h-100">
-                    <span class="section-title">Education</span>
+        <main id="content">
+            <section id="about" class="hero glass">
+                <div class="hero-in">
+                    <h1 id="hero-name"></h1>
+                    <p class="role" id="hero-role"></p>
+                    <div class="tags" id="hero-tags"></div>
+                    <p class="summary" id="summary-content"></p>
+                    <div class="cta">
+                        <a class="btn primary" href="Resume - Christopher Lee Cajes.pdf" download><i class="fas fa-download"></i>Download resume</a>
+                        <button type="button" class="btn ghost" id="open-letter" aria-haspopup="dialog"><i class="fas fa-file-lines"></i>View cover letter</button>
+                        <a class="btn ghost" id="hero-email" href="#"><i class="fas fa-envelope"></i>Get in touch</a>
+                    </div>
+                    <div class="stats" id="stats"></div>
+                </div>
+            </section>
+
+            <section id="skills" class="panel glass reveal">
+                <div class="sec-head"><span class="ico"><i class="fas fa-code"></i></span><h2>Core technical skills</h2></div>
+                <div class="grid skills" id="skills-list"></div>
+            </section>
+
+            <section id="experience" class="panel glass reveal">
+                <div class="sec-head"><span class="ico"><i class="fas fa-briefcase"></i></span><h2>Professional experience</h2></div>
+                <div class="timeline" id="experience-list" data-observe></div>
+                <h3 class="sub-title"><i class="fas fa-laptop-code"></i>Freelance experience</h3>
+                <div class="timeline" id="freelance-list" data-observe></div>
+            </section>
+
+            <section id="projects" class="panel glass reveal">
+                <div class="sec-head"><span class="ico"><i class="fas fa-diagram-project"></i></span><h2>Deployed projects &amp; portfolio</h2></div>
+                <div class="grid projects" id="projects-list"></div>
+            </section>
+
+            <div class="grid two" id="education">
+                <section class="panel glass reveal">
+                    <div class="sec-head"><span class="ico"><i class="fas fa-graduation-cap"></i></span><h2>Education</h2></div>
                     <div id="education-list"></div>
                 </section>
-            </div>
-            <div class="col-lg-6">
-                <section id="strengths-section" class="section-box h-100">
-                    <span class="section-title">Strengths &amp; Preferences</span>
-                    <p class="small text-dim mb-0" id="strengths-content"></p>
+                <section class="panel glass reveal" style="--i:1">
+                    <div class="sec-head"><span class="ico"><i class="fas fa-star"></i></span><h2>Strengths &amp; preferences</h2></div>
+                    <div class="chips" id="strengths-list"></div>
+                    <p class="pref" id="preferences"></p>
                 </section>
             </div>
-        </div>
-    </main>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+            <footer>&copy; <span id="year"></span> Christopher Lee Cajes</footer>
+        </main>
+    </div>
+
+    <div class="modal" id="letter-modal" aria-hidden="true">
+        <div class="modal-panel glass" role="dialog" aria-modal="true" aria-labelledby="letter-title">
+            <div class="modal-bar">
+                <h2 id="letter-title"><span class="ico"><i class="fas fa-file-lines"></i></span>Cover letter</h2>
+                <div class="modal-actions">
+                    <button type="button" class="btn primary sm" id="copy-letter"><i class="fas fa-copy"></i><span>Copy letter</span></button>
+                    <button type="button" class="icon-btn" id="close-letter" aria-label="Close cover letter"><i class="fas fa-xmark"></i></button>
+                </div>
+            </div>
+            <div class="modal-scroll"><article class="letter" id="letter-sheet"></article></div>
+            <div class="sr-only" id="copy-status" role="status" aria-live="polite"></div>
+        </div>
+    </div>
+
     <script src="app.js"></script>
-    <script src="edit-functionality.js"></script>
-<!-- Protection against inspect element, view source, and right click -->
-<script>
-    document.addEventListener('contextmenu', function(e) {
-        e.preventDefault();
-    }, false);
-    
-    document.addEventListener('keydown', function(e) {
-        // Block F12
-        if (e.keyCode === 123) {
-            e.preventDefault();
-            return false;
-        }
-        // Block Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+Shift+C
-        if (e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74 || e.keyCode === 67)) {
-            e.preventDefault();
-            return false;
-        }
-        // Block Ctrl+U (View Page Source)
-        if (e.ctrlKey && e.keyCode === 85) {
-            e.preventDefault();
-            return false;
-        }
-    }, false);
-    
-    // Block right click specifically
-    document.oncontextmenu = new Function("return false");
-</script>
+    <script>
+        // Anti right-click / dev-tools shortcuts (kept from the original site)
+        document.addEventListener('contextmenu', function (e) { e.preventDefault(); }, false);
+        document.addEventListener('keydown', function (e) {
+            if (e.keyCode === 123) { e.preventDefault(); return false; }
+            if (e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74 || e.keyCode === 67)) { e.preventDefault(); return false; }
+            if (e.ctrlKey && e.keyCode === 85) { e.preventDefault(); return false; }
+        }, false);
+    </script>
 </body>
 </html>
-

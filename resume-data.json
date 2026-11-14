@@ -2,71 +2,124 @@
   "personalInfo": {
     "name": "Christopher Lee Cajes",
     "title": "Senior Software Developer",
+    "headline": [
+      "C# ASP.NET (Web & API)",
+      "WinForms",
+      "SQL Server"
+    ],
     "email": "clcajes@gmail.com",
     "phone": "+63 968 581 6796",
     "location": "Philippines",
-    "wfh": "Open to Permanent WFH",
+    "wfh": "Open to Permanent Work from Home",
     "linkedin": "https://www.linkedin.com/in/christopher-lee-cajes-b063962b6/"
   },
-  "summary": "Senior Software Developer with 8+ years of professional experience specializing in C#, ASP.NET Core (Web & API), WinForms, and SQL Server-based systems. Strong background in building enterprise and financial applications, developing secure REST APIs, and supporting business-critical systems. Proven ability to work effectively in structured teams and remote environments, with a focus on code quality, system stability, and positive work culture.",
-  "skills": {
-    "primaryStack": [
-      "C#",
-      "ASP.NET Core (Web & API)",
-      "ASP.NET MVC / .NET Framework",
-      "WinForms (Desktop)",
-      "PHP Laravel",
-      "Python",
-      "Django",
-      "Ruby",
-      "Ruby on Rails",
-      "C++",
-      "TypeScript",
-      "Java Spring Boot",
-      "Java & GUI Development",
-      "Node.js",
-      "RESTful API Design",
-      "Entity Framework",
-      "Class Library Development",
-      "Console Applications"
-    ],
-    "databases": [
-      "SQL Server",
-      "MySQL",
-      "PostgreSQL",
-      "Oracle DB",
-      "SQLite",
-      "Git / Source Control",
-      "Visual Studio / VS Code",
-      "Postman",
-      "Blue Prism (RPA)",
-      "Xcode (Swift)"
-    ],
-    "frontend": [
-      "HTML / CSS",
-      "Bootstrap",
-      "Tailwind CSS",
-      "JavaScript / jQuery",
-      "TypeScript",
-      "Vue.js",
-      "AngularJS",
-      "React JS (Working Knowledge)",
-      "Node.js",
-      "Android Studio (Java)",
-      "Mobile UI/UX Implementation",
-      "REST API Integration"
-    ],
-    "multimedia": [
-      "Unity 3D",
-      "Unreal Engine",
-      "Autodesk Maya",
-      "Blender",
-      "Adobe Photoshop"
-    ]
-  },
+  "summary": "Senior Software Developer with 8+ years of professional experience specializing in C#, ASP.NET Core (Web & API), WinForms, and SQL Server–based systems. Strong background in building enterprise and financial applications, developing secure REST APIs, and supporting business-critical systems. Proven ability to work effectively in structured teams and remote environments, with a focus on code quality, system stability, and positive work culture.",
+  "skills": [
+    {
+      "group": "Primary Stack",
+      "icon": "fa-layer-group",
+      "items": [
+        "C#",
+        "ASP.NET Core (Web Applications & Web APIs)",
+        "ASP.NET MVC / .NET Framework",
+        "WinForms (Desktop Applications)",
+        "Flutter (Dart, any platform)",
+        "PHP Laravel (Web & API)",
+        "Java Spring Boot (Web & API)",
+        "Python",
+        "Ruby on Rails",
+        "Java",
+        "C++",
+        "Golang",
+        "Node.js",
+        "AngularJS",
+        "Vue.js",
+        "TypeScript",
+        "Next.js",
+        "React JS"
+      ]
+    },
+    {
+      "group": "Databases",
+      "icon": "fa-database",
+      "items": [
+        "SQL Server",
+        "MySQL",
+        "PostgreSQL",
+        "Oracle DB"
+      ]
+    },
+    {
+      "group": "Backend & Architecture",
+      "icon": "fa-server",
+      "items": [
+        "RESTful API Design",
+        "Entity Framework",
+        "Class Library Development",
+        "Console Applications",
+        "GUI and Spring Boot Development (Java)",
+        "Gin (Golang)"
+      ]
+    },
+    {
+      "group": "Frontend & Design",
+      "icon": "fa-palette",
+      "items": [
+        "HTML",
+        "CSS",
+        "Bootstrap",
+        "Tailwind",
+        "JavaScript",
+        "jQuery",
+        "React JS (working knowledge)",
+        "Django (Python)",
+        "Adobe Photoshop"
+      ]
+    },
+    {
+      "group": "Mobile Application Development",
+      "icon": "fa-mobile-screen",
+      "items": [
+        "Android Studio",
+        "Xcode",
+        "React Native",
+        "REST API Integration",
+        "SQLite",
+        "Mobile UI/UX Implementation"
+      ]
+    },
+    {
+      "group": "Tools & Environment",
+      "icon": "fa-screwdriver-wrench",
+      "items": [
+        "Visual Studio",
+        "Visual Studio Code",
+        "Xcode (Swift)",
+        "Git",
+        "Source Control",
+        "Postman",
+        "Unity 3D",
+        "Unreal Engine",
+        "Autodesk Maya",
+        "Blender",
+        "Microsoft Office Applications"
+      ]
+    }
+  ],
   "experience": [
     {
-      "position": "Systems Analyst II | Rizal Commercial Banking Corporation (RCBC)",
+      "role": "Application Developer",
+      "company": "SLI Consulting, Inc.",
+      "duration": "2026",
+      "location": "Mandaluyong City",
+      "duties": [
+        "Developed and maintained ASP.NET Core Web applications supporting internal banking and insurance systems.",
+        "Collaborated with analysts and developers to ensure system reliability and compliance."
+      ]
+    },
+    {
+      "role": "Systems Analyst II",
+      "company": "Rizal Commercial Banking Corporation (RCBC)",
       "duration": "Nov 2025 – Feb 2026",
       "location": "Taguig City",
       "duties": [
@@ -76,7 +129,8 @@
       ]
     },
     {
-      "position": "Programmer / Analyst | Vertere Global Solutions Inc.",
+      "role": "Programmer / Analyst",
+      "company": "Vertere Global Solutions Inc.",
       "duration": "Apr 2025 – Oct 2025",
       "location": "Taguig City",
       "duties": [
@@ -86,7 +140,8 @@
       ]
     },
     {
-      "position": "Full Stack Web Developer | Quantrics Enterprises Inc.",
+      "role": "Full Stack Web Developer",
+      "company": "Quantrics Enterprises Inc.",
       "duration": "Nov 2023 – Feb 2025",
       "location": "Taytay, Rizal",
       "duties": [
@@ -95,7 +150,8 @@
       ]
     },
     {
-      "position": "Web Developer | Quantrics Enterprises Inc.",
+      "role": "Web Developer",
+      "company": "Quantrics Enterprises Inc.",
       "duration": "Dec 2021 – Oct 2023",
       "location": "Taytay, Rizal",
       "duties": [
@@ -104,7 +160,8 @@
       ]
     },
     {
-      "position": "Application Developer | Quantrics Enterprises Inc.",
+      "role": "Application Developer",
+      "company": "Quantrics Enterprises Inc.",
       "duration": "Nov 2018 – Nov 2021",
       "location": "Taytay, Rizal",
       "duties": [
@@ -114,7 +171,8 @@
       ]
     },
     {
-      "position": "Software Developer | Capital Power Global, Ltd.",
+      "role": "Software Developer",
+      "company": "Capital Power Global, Ltd.",
       "duration": "May 2017 – Aug 2018",
       "location": "Makati City",
       "duties": [
@@ -124,53 +182,81 @@
       ]
     }
   ],
+  "freelance": [
+    {
+      "role": "Mobile App Developer (Android)",
+      "company": "SariKart",
+      "note": "Confidential start-up business",
+      "duration": "May 2020 – Jun 2025",
+      "duties": [
+        "Built the ASP.NET Core API server used by the Android app, supporting product shipping for sari-sari stores.",
+        "Implemented the Android app in Android Studio using Java."
+      ]
+    },
+    {
+      "role": "Mobile App Developer (Android)",
+      "company": "Sustainable Urban and Community Development Partnership Inc.",
+      "note": "Start-up business",
+      "duration": "Apr 2026 – Present",
+      "duties": [
+        "Built the ASP.NET Core API server used by the Android app, supporting incident management for indigenous peoples and other families.",
+        "Implemented the mobile app with Android Studio (Kotlin) and Flutter (Dart)."
+      ]
+    }
+  ],
   "education": [
     {
       "degree": "Master of Information Technology (Systems Development)",
-      "school": "Ateneo de Naga University | March 2017"
+      "school": "Ateneo de Naga University",
+      "place": "Naga City",
+      "date": "March 2017"
     },
     {
       "degree": "Bachelor of Science in Information Technology",
-      "school": "Ateneo de Naga University | March 2015"
+      "school": "Ateneo de Naga University",
+      "place": "Naga City",
+      "date": "March 2015"
     }
   ],
   "projects": [
     {
-      "title": "La-Fierce - Social Media Mobile App",
-      "description": "Created a full-featured social media application using Android Studio. Developed a robust backend using C# API and SQL Server for data management.",
-      "link": "https://chris654cajes.github.io/lafierce.github.io/",
-      "linkText": "App Introduction (Website)"
+      "title": "Online Recruitment System",
+      "icon": "fa-user-tie",
+      "tech": "PHP Laravel",
+      "description": "Web application for applicant records management and hiring workflows."
     },
     {
-      "title": "La-Fierce - Admin",
-      "description": "Created a separate administrative interface for managing the La-Fierce famous successful people.",
-      "link": "",
-      "linkText": "Platform: Windows Forms C#, Android & Website"
-    },
-    {
-      "title": "SariKart - Online Grocery Shopping Mobile App",
-      "description": "Mobile application developed using Android Studio (Java). Backend powered by ASP.NET Web API for product and order management.",
-      "link": "",
-      "linkText": ""
-    },
-    {
-      "title": "Student Enrollment System - Minds That Matter Learning Center",
-      "description": "Desktop application developed using VB.NET / WinForms. Implemented student records management and enrollment workflows.",
-      "link": "",
-      "linkText": ""
+      "title": "Student Enrollment System",
+      "subtitle": "Minds That Matter Learning Center",
+      "icon": "fa-graduation-cap",
+      "tech": "VB.NET / WinForms",
+      "description": "Desktop application for student records management and enrollment workflows."
     },
     {
       "title": "Other Android Applications",
-      "description": "There are more Android applications developed.",
-      "link": "",
-      "linkText": "Technologies: Android Studio"
-    },
-    {
-      "title": "My Created Applications Portfolio Website",
-      "description": "",
-      "link": "http://www.my-creative-apps.somee.com/",
-      "linkText": "Website"
+      "icon": "fa-mobile-screen-button",
+      "tech": "Android Studio",
+      "description": "Several more Android applications have been developed."
     }
   ],
-  "strengths": "Fast learner, highly adaptable, creative problem-solver, self-motivated, wellness-conscious, and open to feedback.\n\nWork Preferences: Permanent Work from Home, Philippines-based or offshore remote roles, emphasis on work-life balance and positive team culture."
+  "strengths": [
+    "Fast learner",
+    "Highly adaptable",
+    "Creative problem-solver",
+    "Self-motivated",
+    "Wellness-conscious",
+    "Open to feedback"
+  ],
+  "preferences": "Willing to work in any setup, Philippines-based or offshore remote roles, with an emphasis on work–life balance and positive team culture.",
+  "coverLetter": {
+    "date": "November 1, 2026",
+    "company": "Company Name",
+    "salutation": "Dear Hiring Manager,",
+    "paragraphs": [
+      "I am writing to express my interest in the Senior Software Developer position at your company. With more than 8 years of experience in software development, including full-stack development, I am confident in my ability to contribute effectively to your team and deliver high-quality software solutions.",
+      "Throughout my career, I have worked on developing applications and software solutions across different technologies and platforms. I am passionate about software development and continuously strive to build practical, reliable, and user-focused applications.",
+      "I would welcome the opportunity to discuss how my experience, technical skills, and passion for software development can contribute to your team. Thank you for your time and consideration. I look forward to hearing from you."
+    ],
+    "closing": "Sincerely,"
+  }
 }

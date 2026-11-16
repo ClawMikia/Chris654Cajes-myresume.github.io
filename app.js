@@ -256,11 +256,9 @@
   ],
   "preferences": "Willing to work in any setup.",
   "coverLetter": {
-    "date": "November 1, 2026",
-    "company": "Company Name",
     "salutation": "Dear Hiring Manager,",
     "paragraphs": [
-      "I am writing to express my interest in the Senior Software Developer position at your company. With more than 8 years of experience in software development, including full-stack development, I am confident in my ability to contribute effectively to your team and deliver high-quality software solutions.",
+      "I am writing to express my interest in the Senior Software Developer position at your company. With more than 9 years of experience in software development, including full-stack development, I am confident in my ability to contribute effectively to your team and deliver high-quality software solutions.",
       "Throughout my career, I have worked on developing applications and software solutions across different technologies and platforms. I am passionate about software development and continuously strive to build practical, reliable, and user-focused applications.",
       "I would welcome the opportunity to discuss how my experience, technical skills, and passion for software development can contribute to your team. Thank you for your time and consideration. I look forward to hearing from you."
     ],
@@ -465,10 +463,10 @@
     /* ---------- Cover letter modal ---------- */
     function coverLetterText() {
         const p = DATA.personalInfo, c = DATA.coverLetter;
+        const meta = [c.date, c.company].filter(Boolean);
         return [
             p.name + '\n' + p.location + '\n' + p.email + ' | ' + p.phone,
-            c.date,
-            c.company,
+            ...meta,
             c.salutation,
             ...c.paragraphs,
             c.closing + '\n\n' + p.name
@@ -483,8 +481,8 @@
                 <p>${esc(p.location)}</p>
                 <p>${esc(p.email)} &nbsp;|&nbsp; ${esc(p.phone)}</p>
             </header>
-            <p class="l-date">${esc(c.date)}</p>
-            <p class="l-company">${esc(c.company)}</p>
+            ${c.date ? `<p class="l-date">${esc(c.date)}</p>` : ''}
+            ${c.company ? `<p class="l-company">${esc(c.company)}</p>` : ''}
             <p class="l-salute">${esc(c.salutation)}</p>
             ${c.paragraphs.map(t => `<p class="l-body">${esc(t)}</p>`).join('')}
             <p class="l-close">${esc(c.closing)}</p>

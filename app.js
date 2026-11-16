@@ -18,10 +18,9 @@
     "email": "clcajes@gmail.com",
     "phone": "+63 968 581 6796",
     "location": "Philippines",
-    "wfh": "Open to Permanent Work from Home",
     "linkedin": "https://www.linkedin.com/in/christopher-lee-cajes-b063962b6/"
   },
-  "summary": "Senior Software Developer with 8+ years of professional experience specializing in C#, ASP.NET Core (Web & API), WinForms, and SQL Server–based systems. Strong background in building enterprise and financial applications, developing secure REST APIs, and supporting business-critical systems. Proven ability to work effectively in structured teams and remote environments, with a focus on code quality, system stability, and positive work culture.",
+  "summary": "Senior Software Developer with 9+ years of professional experience specializing in C#, ASP.NET Core (Web & API), PHP Laravel, React JS, Android (Android Studio using Java and Kotlin and Flutter using Dart), Flutter using Dart for desktop apps, and SQL Server and MySQL systems. Strong background in building enterprise and financial applications, developing secure REST APIs, and supporting business-critical systems. Proven ability to work effectively in structured teams and remote environments, with a focus on code quality and system stability.",
   "skills": [
     {
       "group": "Primary Stack",
@@ -255,7 +254,7 @@
     "Wellness-conscious",
     "Open to feedback"
   ],
-  "preferences": "Willing to work in any setup, Philippines-based or offshore remote roles, with an emphasis on work–life balance and positive team culture.",
+  "preferences": "Willing to work in any setup.",
   "coverLetter": {
     "date": "November 1, 2026",
     "company": "Company Name",
@@ -303,7 +302,6 @@
         setText('contact-email-text', p.email);
         setText('contact-phone-text', p.phone);
         setText('contact-location-text', p.location);
-        setText('contact-wfh-text', p.wfh);
         $('contact-email').href = 'mailto:' + p.email;
         $('hero-email').href = 'mailto:' + p.email;
         $('contact-phone').href = 'tel:' + p.phone.replace(/\s/g, '');
@@ -313,7 +311,7 @@
 
         const companies = new Set(DATA.experience.map(e => e.company)).size;
         const stats = [
-            { n: 8, suffix: '+', label: 'Years in software development' },
+            { n: 9, suffix: '+', label: 'Years in software development' },
             { n: companies, suffix: '', label: 'Companies worked with' },
             { n: DATA.freelance.length, suffix: '', label: 'Freelance mobile projects' }
         ];

@@ -22,8 +22,8 @@
       "icon": "fa-layer-group",
       "items": [
         "C#",
-        "ASP.NET Core (Web Applications & Web APIs)",
-        "ASP.NET MVC / .NET Framework",
+        "ASP.NET (Web Applications & Web APIs)",
+        "ASP.NET MVC / .NET Framework / .NET Core",
         "WinForms (Desktop Applications)",
         "Flutter (Dart, any platform)",
         "PHP Laravel (Web & API)",

@@ -35,18 +35,23 @@
         "WinForms (Desktop Applications)",
         "Flutter (Dart, any platform)",
         "PHP Laravel (Web & API)",
-        "Java Spring Boot (Web & API)",
+        "Java Spring Boot (Web & API), J2EE",
         "Python",
         "Ruby on Rails",
         "Java",
+        "Core Java",
         "C++",
         "Golang",
+        "JavaScript",
+        "Dart",
         "Node.js",
         "AngularJS",
         "Vue.js",
         "TypeScript",
         "Next.js",
-        "React JS"
+        "React JS",
+        "Redux",
+        "ES6"
       ]
     },
     {
@@ -83,7 +88,8 @@
         "jQuery",
         "React JS (working knowledge)",
         "Django (Python)",
-        "Adobe Photoshop"
+        "Adobe Photoshop",
+        "Strong UI/UX Development"
       ]
     },
     {

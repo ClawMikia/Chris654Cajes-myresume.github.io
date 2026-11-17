@@ -3,9 +3,12 @@
     "name": "Christopher Lee Cajes",
     "title": "Senior Software Developer",
     "headline": [
-      "C# ASP.NET (Web & API)",
-      "WinForms",
-      "SQL Server"
+      "Websites",
+      "Mobile Apps",
+      "Desktop Apps",
+      "Games",
+      "Database",
+      "API"
     ],
     "email": "clcajes@gmail.com",
     "phone": "+63 968 581 6796",
@@ -234,7 +237,7 @@
     {
       "title": "Other Android Applications",
       "icon": "fa-mobile-screen-button",
-      "tech": "Android Studio",
+      "tech": "Android Studio and Flutter",
       "description": "Several more Android applications have been developed."
     }
   ],
